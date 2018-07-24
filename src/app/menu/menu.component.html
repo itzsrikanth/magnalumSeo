@@ -1,0 +1,13 @@
+<ul class="h-100 w-100 d-flex align-items-center justify-content-center flex-column">
+  <li *ngFor="let menu of menus | async" class="d-flex flex-column justify-content-center align-items-center py-2">
+    <a *ngIf="menu.params;else noParam" [routerLink]="menu.href" [queryParams]="menu.params">{{ menu.name }}</a>
+    <ng-template #noParam>
+      <a [routerLink]="menu.href" (click)="menuState(menu)">{{ menu.name }}</a>
+    </ng-template>
+    <ng-container *ngIf="menu.subs">
+      <div id="sub-menu-div" [@menuHeight]="menu.subsState" class="d-flex flex-column align-items-center justify-content-center">
+        <a *ngFor="let sub of menu.subs" class="my-2">{{ sub.name }}</a>
+      </div>
+    </ng-container>
+  </li>
+</ul>

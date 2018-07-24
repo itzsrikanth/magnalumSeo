@@ -1,0 +1,14 @@
+
+.page {
+    height: 200vh;
+    width: 100%;
+    position: absolute;
+    transform-origin: 0 0;
+  }
+  @for $i from 1 through 4 {
+    .page:nth-child(#{$i}) {
+      z-index: (4 - $i) * 5;
+      // transform: translateZ(-#{$i - 1}px) scale(0.5 + 0.5 * $i);
+      transform: translateZ((-($i - 1) * 4)+px) scale(#{(2 * $i) - 1});
+    }
+  }

@@ -1,0 +1,665 @@
+@import '../../variables.scss';
+@import '../../../node_modules/mathsass/dist/_math.scss';
+@import '../../../node_modules/mathsass/dist/_constants.scss';
+:host {
+  width: 100%;
+  --Courgette: Courgette, Roboto, sans-serif;
+}
+
+// #hud {
+//   width: 90vw;
+//   height: 90vw;
+//   position: absolute;
+//   top: 5vh;
+//   left: 5vw;
+//   background-image: url(/assets/img/delta_plus_hud_by_disastranagant-d4i6yyr.png);
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+
+#logo {
+  position: absolute;
+  width: 20rem;
+  height: 10rem;
+  top: 0rem;
+  left: -2rem;
+}
+
+#head-container {
+  position: absolute;
+  top: 15vh;
+  padding-left: 5vw;
+  perspective: 100px;
+}
+
+#head {
+  position: absolute;
+  top: 30px;
+  h1 {
+    font-family: Roboto, sans-serif;
+    font-size: 100px;
+    color: #FFF;
+  }
+}
+
+#bill-counter {
+  position: relative;
+  span {
+    color: #FFF;
+    font-family: var(--Courgette);
+    font-size: 30px;
+  }
+}
+
+#sub-head {
+  position: relative;
+  top: 170px;
+  display: inline-block;
+  div {
+    color: #FFF;
+    font: 28px/150% Roboto, sans-serif;
+  }
+}
+
+#text-cursor {
+  background-color: #FFF;
+  width: 2px;
+  height: 35px;
+  animation: cursor;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#geo-encoding {
+  color: #FFF;
+  font: $roboto18;
+  text-align: center;
+  position: absolute;
+  bottom: 5vh;
+  width: 100%;
+}
+
+@keyframes cursor {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#home-button {
+  position: relative;
+  top: 220px;
+  button {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    font: $roboto18;
+    outline: none;
+    cursor: pointer;
+  }
+  button:first-child {
+    background: #FFF;
+    color: $primary;
+    transition: all .3s;
+    &:hover {
+      background: transparent;
+      color: #FFF;
+    }
+  }
+  button:last-child {
+    background: transparent;
+    color: #FFF;
+    border: solid 1px #FFF;
+    margin-left: 150px;
+  }
+}
+
+.page-holder {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+}
+
+#head-points {
+  position: absolute;
+  bottom: 15vh;
+}
+
+.head-point {
+  h4 {
+    font: 25px/150% Satisfy, Roboto, sans-serif;
+    color: #FFF;
+  }
+  p {
+    font: $roboto18;
+    color: #FFF;
+  }
+}
+
+// ---------------------------------------------------------
+// dates inspiration
+#inspired {
+
+}
+.em-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 1px solid #ffb606;
+  text-align: center;
+  line-height: 150px;
+  color: #ffb606;
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.em-head {
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.em-para {
+  color: grey;
+  font-size: 14px;
+}
+
+// ----------------------------------------------------------
+#sb-holder {
+  padding: 150px 0px;
+}
+
+#sb-1 {
+  flex-direction: row-reverse;
+}
+
+#sb-c {
+  width: 20%;
+  padding-bottom: 4rem;
+  margin-left: 3rem;
+  & p,
+  & h2 {
+    width: 150%;
+    margin-left: 20%;
+  }
+  .sb {
+    font-size: 1.2rem;
+    color: #FFF;
+    text-indent: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+#sb {
+  color: $text;
+  font-family: Satisfy, sans-serif;
+}
+
+.sb {
+  font-family: Montserrate, sans-serif;
+}
+
+#sb-top {
+  width: 70%;
+  perspective: 1000px;
+  position: relative;
+  height: 60vh;
+}
+
+.sb-stack {
+  min-height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  box-shadow: 15px 30px 30px 10px rgba(0, 0, 0, 0.5);
+  top: 0;
+  background-position: center;
+  &:nth-child(1) {
+    background-image: url(/assets/stock/30-investing-quotes-for-stock-market-success-3-638.jpg);
+    transform: translateZ(-200px) translateY(-50px) translateX(-150px) rotateY(-28deg);
+    z-index: 53;
+  }
+  &:nth-child(2) {
+    background-image: url(/assets/stock/busy-glassware-job-266141.jpg);
+    transform: translateZ(-200px) translateX(-100px) rotateY(-28deg);
+    z-index: 52;
+  }
+  &:nth-child(3) {
+    background-image: url(/assets/stock/antique-blank-camera-269923.jpg);
+    transform: translateZ(-200px) translateY(50px) translateX(-50px) rotateY(-28deg);
+    z-index: 51;
+  }
+}
+
+// -------------------- ping-pong ---------------------------------
+#ping-holder {
+  // background: linear-gradient(top, rgba(255,255,255,0.5), whitesmoke);
+}
+
+#ping-pong {
+  height: 40vh; // background-color: whitesmoke;
+}
+
+.ping-pong {
+  color: $primary;
+  position: relative;
+  font-size: 2rem;
+  width: 6.25vw;
+  height: 6.25vw;
+  border-radius: 50%;
+  background: #FFF;
+  transition: all .5s;
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      transition-delay: round($i / 2) * 300ms;
+    }
+  }
+  i,
+  span {
+    transition: all .3s;
+  }
+  &.activate {
+    .ping-expander {
+      animation: pingFrame 1.2s linear forwards;
+    }
+  }
+}
+
+.alternate-odd {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.alternate-even {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+.ping-expander {
+  position: absolute;
+  background-color: red;
+  z-index: 5000;
+  top: calc(3.125vw - 5px);
+  left: 0;
+  height: 10px;
+  width: 6.25vw;
+}
+
+@keyframes pingFrame {
+  from {
+    transform: none;
+  }
+  33% {
+    transform: rotateZ(90deg);
+  }
+  34% {
+    transform: none;
+    height: 6.25vw;
+    width: 10px;
+  }
+  to {
+    transform: none;
+    top: calc(3.125vw - var(--ping-top));
+    height: 6.25vw;
+    width: 10px;
+  }
+}
+
+.ping-title {
+  color: #FFF;
+  font: 15px/150% Roboto, sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 7vw;
+  text-transform: uppercase;
+}
+
+// -----------------------------------------------------------------------
+#cp {
+  &>div {}
+  height: 60vw;
+  perspective: 300px;
+}
+
+#cp-carousel {
+  position: absolute;
+  transform: rotateY(10deg);
+  background: url(/assets/stock/busy-glassware-job-266141.jpg) no-repeat center;
+  width: 50vw;
+  height: 70vh;
+  div {
+    width: 40vw;
+    position: relative;
+    left: 25vw;
+  }
+}
+
+#cp-holder {
+  width: 40vw;
+  height: 80vh;
+  position: relative;
+  div {
+    position: absolute;
+  }
+}
+
+#cp-info {
+  width: 40vw;
+  left: 35vw;
+  position: relative;
+  h4 {
+    font: 35px/150% Satisfy, Roboto, sans-serif;
+    color: #FFF;
+  }
+  p {
+    font: $roboto18;
+    color: #FFF;
+  }
+}
+
+$const: 20;
+.cp-sub {
+  background: #FFF;
+  color: $primary;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 7vw;
+  height: 7vw;
+  transition: all .5s;
+  span {
+    position: absolute;
+    color: $primary;
+    font: 15px/150% Roboto, sans-serif;
+    top: 70px;
+    text-transform: capitalize;
+  }
+}
+
+// @for $i from 1 through 5 {
+//     .cp-sub:nth-child(#{$i}) {
+//         top: calc((($i - 1) * 10vw) - 25px);
+//     }
+// }
+@mixin circleCoord($radius, $unit) {
+  @for $rad from 1 through 5 {
+    $angle: ($PI / 2) + ($PI * $rad / 6);
+    .cp-sub:nth-child(#{$rad}) {
+      $x: (cos($angle) * ($radius + 5))+ ($const - 7);
+      $y: (sin($angle) * ($radius + 5)) + ($const - 2.5);
+      transform: translate($x + $unit, $y + $unit);
+    }
+    .cp-sub.arc:nth-child(#{$rad}) {
+      $x: (cos($PI / 2) * ($radius + 5))+ ($const - 7);
+      $y: (sin($PI / 2) * ($radius + 5)) + ($const - 2.5);
+      transform: translate($x + $unit, $y + $unit);
+    }
+  }
+}
+
+@include circleCoord($const, vw);
+.cp-main {
+  background: radial-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  width: 40vw;
+  height: 40vw;
+  left: 30vw;
+  top: 0;
+  border-radius: 50%;
+}
+
+//-----------------------------------------------------------------------
+:root {
+  --cvWidth: 0px;
+}
+
+#cv2 {
+  position: relative;
+  height: calc(var(--cvWidth) * .62);
+  perspective: 1000px;
+  div {
+    position: absolute;
+    color: #FFF;
+    cursor: pointer;
+  }
+}
+
+@for $i from 0 through 5 {
+  #cv2-#{$i} {
+    background: rgb(random(255), random(255), random(255));
+  }
+}
+
+$baseTime: 280ms;
+#cv2-0 {
+  left: 0;
+  top: 0;
+  height: calc(var(--cvWidth) * .2);
+  width: calc(var(--cvWidth) * .6);
+  text-align: center;
+  background: $primary;
+  font-family: Roboto, sans-serif;
+  font-size: 24px; // min-height: 200px;
+  transform: scaleY(0);
+  transition: all $baseTime;
+  z-index: 25;
+  &.windows {
+    transform: scaleY(1);
+  }
+}
+
+#cv2-1 {
+  left: calc(var(--cvWidth) * .6);
+  top: 0;
+  height: calc(var(--cvWidth) * .2);
+  width: calc(var(--cvWidth) * .2);
+  background-color: $catch95;
+  font-size: 5rem; // min-height: 200px;
+  transition: all $baseTime;
+  transition-delay: $baseTime;
+  z-index: 24;
+  transform-origin: left center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+#cv2-2 {
+  left: calc(var(--cvWidth) * .8);
+  top: 0;
+  height: calc(var(--cvWidth) * .2);
+  width: calc(var(--cvWidth) * .2); // min-height: 200px;
+  background-color: $catch85;
+  font-size: 5rem;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 2;
+  z-index: 23;
+  transform-origin: center left;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+#cv2-3 {
+  top: calc(var(--cvWidth) * .2);
+  left: 0;
+  height: calc(var(--cvWidth) * .21);
+  width: calc(var(--cvWidth) * .21);
+  background-image: url(/assets/stock/blank-page-blur-close-up-949218.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  div {
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+  }
+  transition: all $baseTime;
+  transition-delay: $baseTime * 2.5;
+  z-index: 23;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+#cv2-4 {
+  top: calc(var(--cvWidth) * .2);
+  left: calc(var(--cvWidth) * .21);
+  height: calc(var(--cvWidth) * .21);
+  width: calc(var(--cvWidth) * .21);
+  font-size: 5rem;
+  background: $catch110; // min-height: 200px;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 3.5;
+  z-index: 22;
+  transform-origin: left center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+#cv2-5 {
+  top: calc(var(--cvWidth) * .41);
+  left: 0;
+  height: calc(var(--cvWidth) * .21);
+  width: calc(var(--cvWidth) * .21); // min-height: 200px;
+  background: $catch105;
+  font-size: 5rem;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 4;
+  z-index: 22;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+#cv2-6 {
+  top: calc(var(--cvWidth) * .41);
+  left: calc(var(--cvWidth) * .21);
+  height: calc(var(--cvWidth) * .21);
+  width: calc(var(--cvWidth) * .21); // min-height: 200px;
+  font-size: 5rem;
+  background: $catch95;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 5;
+  z-index: 21;
+  transform-origin: left center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+#cv2-7 {
+  top: calc(var(--cvWidth) * .2);
+  left: calc(var(--cvWidth) * .42);
+  height: calc(var(--cvWidth) * .31);
+  width: calc(var(--cvWidth) * .31); // min-height: 200px;
+  background-image: url(/assets/stock/iron-melt-furnace-metal-hot-fire-wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  div {
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+  }
+  transition: all $baseTime;
+  transition-delay: $baseTime * 6;
+  z-index: 20;
+  transform-origin: left center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+#cv2-8 {
+  top: calc(var(--cvWidth) * .2);
+  left: calc(var(--cvWidth) * .73);
+  height: calc(var(--cvWidth) * .135);
+  width: calc(var(--cvWidth) * .135); // min-height: 200px;
+  background: $catch85;
+  font-size: 3rem;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 6.5;
+  z-index: 22;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+#cv2-9 {
+  top: calc(var(--cvWidth) * .2);
+  left: calc(var(--cvWidth) * .865);
+  height: calc(var(--cvWidth) * .135);
+  width: calc(var(--cvWidth) * .135);
+  font-size: 3rem;
+  background: $catch110;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 7;
+  z-index: 22;
+  transform-origin: center top;
+  transform: rotateX(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+}
+
+#cv2-10 {
+  top: calc(var(--cvWidth) * .335);
+  left: calc(var(--cvWidth) * .73);
+  height: calc(var(--cvWidth) * .175);
+  width: calc(var(--cvWidth) * .27); // min-height: 200px;
+  background: $catch;
+  font-size: 5rem;
+  transition: all $baseTime;
+  transition-delay: $baseTime * 8;
+  z-index: 20;
+  transform-origin: left center;
+  transform: rotateY(-180deg);
+  opacity: 0;
+  &.windows {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+} // 037CA9
+// 53C6F2
+// 92C5D8
+// 037CA9

@@ -1,0 +1,32 @@
+article {
+    width: 100vw;
+    height: 100vh;
+  }
+  .blobs {
+    filter: url(#goo);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 50px;
+    &:hover {
+      .blob:first-child {
+        transform: translate(-100px);
+      }
+      .blob:nth-child(2) {
+        transform: translate(-80px, -80px);
+      }
+      .blob:last-child {
+        transform: translate(0px, -100px);
+      }
+    }
+  }
+  
+  .blob {
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    background: #E75480;
+    display: inline-block;
+    border-radius: 50%;
+    transition: all .3s;
+  }

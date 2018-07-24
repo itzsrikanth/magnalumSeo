@@ -1,0 +1,10 @@
+<div id="gallery-frame">
+	<div id="gallery-board" #board class="esp0">
+		<div *ngFor="let ex of exhibits; let idx = index" class="exhibit" [class.active]="idx == serial" [style.background]="'url(' + ex.url + ')'"></div>
+	</div>
+</div>
+<div id="control">
+	<button id="next" (click)="serial = serial + 1; changeDet()">Next</button>
+	<button id="prev" (click)="serial = serial - 1; changeDet()">Prev</button>
+  <p>{{ serial }}</p>
+</div>

@@ -1,0 +1,22 @@
+#jumbo-hover {
+  perspective: 100px;
+  transform-style: preserve-3d;
+
+  & > div {
+    font-size: 130px;
+    color: white;
+    position: absolute;
+    // transform: rotateX(30deg);
+    // transition: all .4s;
+  }
+  // &:hover > div {
+  //   transition: all .4s;
+  //   transform: rotateX(-30deg);
+  // }
+}
+
+@for $i from 1 through 10 {
+  #jumbo-hover>div:nth-child(#{$i}) {
+    transform: translateZ(-#{$i}px);
+  }
+}

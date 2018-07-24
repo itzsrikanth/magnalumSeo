@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+:host {
+    overflow: hidden;
+    a {
+        color: $text;
+        text-align: center;
+    }
+    a.active {
+        color: $btn;
+    }
+    li {
+        width: 50%;
+        border-bottom: solid 1px $text;
+        &:last-child {
+            border: none;
+        }
+        &>a {
+            text-transform: uppercase;
+        }
+        & > div > a {
+            text-transform: capitalize;
+        }
+        & > div > a:hover {
+            color: $btn;            
+        }
+        & > a:hover {
+            color: $btn;
+        }
+    }
+}
+
+#sub-menu-div {
+    overflow: hidden;
+}

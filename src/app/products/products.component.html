@@ -1,0 +1,26 @@
+<section id="page-two" class="page-holder">
+  <div id="parallelogram-holder" class="d-flex flex-row">
+    <div *ngFor="let parallel of parallelogram; let idx = index" class="parallelogram" #parallelogram (mouseover)="selectProduct(idx)"
+      [style.background]="'url(' + parallel.url + ')'" (click)="productClicked(idx)"></div>
+  </div>
+  <div class="parallelogram-info pt-2 pb-4 w-100">
+    <h3>{{ parallelogram[productIndex].text }}</h3>
+  </div>
+</section>
+
+<section *ngIf="parallelogram[productIndex].data" id="tech-data" class="row w-100" [class.active]="techDataBool">
+  <div class="col-3" *ngFor="let datum of parallelogram[productIndex].data">
+    <div  class="d-flex align-items-center justify-content-around p-3 mx-3">
+      <div class="tech-logo d-flex justify-content-center align-items-center" [style.background]="datum.color">
+        <i class="fa fa-{{datum.class}}"></i>
+      </div>
+      <div class="tech-datum d-flex flex-column">
+        <span class="tech-value d-flex justify-content-start">
+          <span>{{ datum.value }}</span>
+          <span class="mr-1">{{ datum.unit }}</span>
+        </span>
+        <span class="tech-head">{{ datum.head }}</span>
+      </div>
+    </div>
+  </div>
+</section>

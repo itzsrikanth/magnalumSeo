@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+#p-bg {
+  background: $primary;
+}
+.hider {
+  width: 100vw;
+  overflow: hidden;
+  transition: all .5s ease-out;
+  &.active {
+    transition: all .5s ease-in;
+  }
+}
+.wrapper {
+  height: 100vh;
+  width: calc(100% + 17px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 2px;
+  position: relative;
+  perspective-origin: top left;
+  --cvWidth: 0px;
+}

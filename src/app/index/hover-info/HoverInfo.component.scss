@@ -1,0 +1,85 @@
+@function left-value($gap, $element, $i) {
+    // formula:-  (2n-1)x + (n-1)y
+    @return (((2 * $i) - 1) * $gap)+(($i - 1) * $element)
+  }
+  
+  $element: 12vw;
+  $n: 4;
+  $gap: (100 - ($n * $element)) / ($n * 2);
+  $z-inactive: 100;
+  $z-active: 110;
+  
+  #w-top {
+    height: 100vh;
+    // background-color: yellow;
+    padding: 0 10%;
+  }
+  .w-circle {
+    position: absolute;
+    height: $element;
+    width: $element;
+    background-color: pink;
+    border-radius: 50%;
+    top: 15vh;
+    left: 90vh;
+    overflow: hidden;
+    z-index: $z-inactive;
+  }
+  
+  
+  @for $i from 1 through 4 {
+  
+    .w-circle:nth-child(#{$i}).active {
+      z-index: $z-active;
+      transition: all .3s;
+      animation: w-circle-fill-#{$i};
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+    }
+  
+    .w-circle:nth-child(#{$i}) {
+      left: left-value($gap, $element, $i);
+      top: 15vh;
+    }
+  
+    @keyframes w-circle-fill-#{$i} {
+      from {
+        border-radius: 50%;
+        width: $element;
+        height: $element;
+        background: pink;
+        // left: left-value($gap, $element, $i);
+        transform: none;
+      }
+      30%, 35% {
+        border-radius: 0%;
+        width: $element;
+        background: white;
+        height: 0.5vw;
+        // left: left-value($gap, $element, $i);
+        top: calc(15vh + 5rem);
+        transform: none;
+      }
+      60%, 65% {
+        background: white;
+        border-radius: 0%;
+        top: calc(15vh + 5rem);
+        width: 100vw;
+        // left: 0vh;
+        height: 0.5vw;
+        transform: translateX(-(left-value($gap, $element, $i)));
+      }
+      to {
+        // left: 0vh;
+        width: 100vw;
+        border-radius: 0%;
+        top: 0vh;
+        background: steelblue;
+        height: 100vh;
+        transform: translateX(-(left-value($gap, $element, $i)));
+      }
+    }
+  
+  }
+  
+  
